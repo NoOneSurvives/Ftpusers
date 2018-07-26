@@ -13,7 +13,7 @@ checkout scm
 return this;
 '''
             def external = load(fp)
-            external.run()
+            run()
         }
     }
 }

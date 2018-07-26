@@ -6,8 +6,9 @@ timestamps {
             def fp = 'file.groovy'
             writeFile file: fp, text: '''#!/usr/bin/env groovy
 
-def run() { 
-checkout scm
+def call() { 
+   checkout scm
+   
 }
 
 return this;

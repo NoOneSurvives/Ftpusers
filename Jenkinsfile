@@ -6,7 +6,7 @@ timestamps {
             def fp = 'file.groovy'
             writeFile file: fp, text: '''#!/usr/bin/env groovy
 
-def run = chechout scm"
+def run = checkout scm
 return this
 '''
             def external = load(fp)

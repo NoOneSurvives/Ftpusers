@@ -1,10 +1,16 @@
-pipeline {
-    agent { docker { image 'maven:3.3.3' } }
-    stages {
-        stage('build') {
-            steps {
-                sh 'mvn --version'
-            }
+#!/usr/bin/env groovy
+timestamps {
+        node('testLabel') {
+
+            stage('test') {
+            def fp = 'file.groovy'
+            writeFile file: fp, text: '''#!/usr/bin/env groovy
+
+def run = echo "Groovy"
+return this
+'''
+            def external = load(fp)
+            external.run()
         }
     }
 }

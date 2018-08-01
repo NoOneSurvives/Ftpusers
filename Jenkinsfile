@@ -19,7 +19,7 @@ def called(ctx) {
    
 }
 
-return called;
+return this;
 '''
             load(fp)(this)
         }

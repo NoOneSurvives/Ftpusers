@@ -4,6 +4,8 @@ def test_print() {
 def a = "test"
 }
 
+echo this.test_print.toString()
+
 timestamps {
         node('testLabel') {
 
@@ -15,14 +17,13 @@ def call(ctx) {
    ctx.checkout ctx.scm
    ctx.echo ctx.pwd()
    
-   println(ctx.test_print.a)
+   ctx.println(ctx.test_print.a)
    
 }
 
-return this;
+return call;
 '''
-            def external = load(fp)
-            external.call(this)
+            load(fp)(this)
         }
     }
 }

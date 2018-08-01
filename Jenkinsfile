@@ -21,7 +21,7 @@ def call() {
    
 }
 
-return this;
+return call;
 '''
             load(fp)(this)
         }

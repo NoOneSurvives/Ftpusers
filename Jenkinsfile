@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 def test_print() {
-a = "test"
+def a = "test"
 }
 
 timestamps {
@@ -11,18 +11,18 @@ timestamps {
             def fp = 'file.groovy'
             writeFile file: fp, text: '''#!/usr/bin/env groovy
 
-def call() { 
-   checkout scm
-   echo pwd()
+def call(ctx) { 
+   ctx.checkout ctx.scm
+   ctx.echo ctx.pwd()
    
-   println(test_print.a)
+   println(ctx.test_print.a)
    
 }
 
 return this;
 '''
             def external = load(fp)
-            external()
+            external.call(this)
         }
     }
 }

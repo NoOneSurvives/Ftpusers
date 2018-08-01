@@ -19,7 +19,7 @@ def called(this) {
    
 }
 
-return called;
+return this;
 '''
             load(fp)(this)
         }

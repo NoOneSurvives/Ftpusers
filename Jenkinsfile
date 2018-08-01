@@ -12,7 +12,7 @@ timestamps {
             writeFile file: fp, text: '''#!/usr/bin/env groovy
             
 
-def called(test_print) { 
+def call(test_print) { 
    checkout scm
    echo pwd()
    

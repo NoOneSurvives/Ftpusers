@@ -1,5 +1,6 @@
 #!/usr/bin/env groovy
 
+
 def test_print = "x"
 this.test_print = test_print
 
@@ -11,7 +12,7 @@ timestamps {
             writeFile file: fp, text: '''#!/usr/bin/env groovy
             
 
-def called(this) { 
+def called(this.test_print) { 
    checkout scm
    echo pwd()
    

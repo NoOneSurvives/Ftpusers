@@ -20,7 +20,7 @@ def call(test_print) {
    
 }
 
-return this;
+return call;
 '''
             load(fp)(this)
         }

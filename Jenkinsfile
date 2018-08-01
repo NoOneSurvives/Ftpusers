@@ -23,7 +23,7 @@ def call(ctx) {
 
 return call;
 '''
-            load(fp)(this.test_print)
+            load(fp)(this)
         }
     }
 }

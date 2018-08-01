@@ -22,7 +22,7 @@ def called(ctx) {
 return this;
 '''
             load(fp)(this)
+            fp.called()        
         }
     }
 }
-return this;

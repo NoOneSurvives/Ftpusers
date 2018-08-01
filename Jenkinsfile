@@ -13,17 +13,18 @@ timestamps {
             writeFile file: fp, text: '''#!/usr/bin/env groovy
             
 
-def call(ctx) { 
-   ctx.checkout ctx.scm
-   ctx.echo ctx.pwd()
+def call() { 
+   checkout scm
+   echo pwd()
    
-   ctx.println(ctx.test_print)
+   println(test_print)
    
 }
 
-return call;
+return this;
 '''
             load(fp)(this)
         }
     }
 }
+return this;

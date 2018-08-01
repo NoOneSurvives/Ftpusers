@@ -1,9 +1,7 @@
 #!/usr/bin/env groovy
 
-def test_print
-this.test_print = "x"
-
-echo this.test_print.toString()
+def test_print = "x"
+this.test_print = test_print
 
 timestamps {
         node('testLabel') {
@@ -13,18 +11,17 @@ timestamps {
             writeFile file: fp, text: '''#!/usr/bin/env groovy
             
 
-def call(test_print) { 
-   checkout scm
-   echo pwd()
+def called(ctx) { 
+   ctx.checkout ctx.scm
+   ctx.echo ctx.pwd()
    
-   println(test_print.x)
+   ctx.println(ctx.test_print)
    
 }
 
-return this;
+return called;
 '''
             load(fp)(this)
         }
     }
 }
-return this;

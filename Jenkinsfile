@@ -11,18 +11,17 @@ timestamps {
             writeFile file: fp, text: '''#!/usr/bin/env groovy
             
 
-def called(ctx) { 
-   ctx.checkout ctx.scm
-   ctx.echo ctx.pwd()
+def called() { 
+   checkout scm
+   echo pwd()
    
-   ctx.println(ctx.test_print)
+   println(test_print)
    
 }
 
-return this;
+return called;
 '''
             load(fp)(this)
-            fp.called()        
         }
     }
 }

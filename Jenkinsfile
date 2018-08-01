@@ -13,7 +13,7 @@ timestamps {
             
 
 def call(ctx) { 
-   checkout scm
+   ctx.checkout ctx.scm
    echo pwd()
    
    println(ctx.test_print)

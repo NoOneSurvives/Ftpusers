@@ -17,7 +17,7 @@ def call(test_print) {
    checkout scm
    echo pwd()
    
-   println(test_print)
+   println(test_print.x)
    
 }
 

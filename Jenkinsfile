@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def test_print() {
+var test_print = function() {
 def a = "test"
 }
 

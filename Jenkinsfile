@@ -1,4 +1,9 @@
 #!/usr/bin/env groovy
+
+def test_print() {
+a = "test"
+}
+
 timestamps {
         node('testLabel') {
 
@@ -8,6 +13,7 @@ timestamps {
 
 def call() { 
    checkout scm
+   println(test_print.a)
    
 }
 

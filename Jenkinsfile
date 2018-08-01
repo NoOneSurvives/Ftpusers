@@ -16,11 +16,11 @@ def call(test_print) {
    checkout scm
    echo pwd()
    
-   println(test_print)
+   println(this.test_print)
    
 }
 
-return call;
+return this;
 '''
             load(fp)(this)
         }

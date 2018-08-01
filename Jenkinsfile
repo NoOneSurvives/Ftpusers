@@ -1,6 +1,7 @@
 #!/usr/bin/env groovy
 
-def test_print = "x"
+def test_print
+this.test_print = "x"
 
 echo this.test_print.toString()
 
@@ -10,6 +11,7 @@ timestamps {
             stage('test') {
             def fp = 'file.groovy'
             writeFile file: fp, text: '''#!/usr/bin/env groovy
+            
 
 def call(ctx) { 
    ctx.checkout ctx.scm
@@ -21,7 +23,7 @@ def call(ctx) {
 
 return call;
 '''
-            load(fp)(this)
+            load(fp)(this.test_print)
         }
     }
 }

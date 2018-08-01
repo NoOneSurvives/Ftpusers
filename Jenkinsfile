@@ -1,8 +1,6 @@
 #!/usr/bin/env groovy
 
-var test_print = function() {
-def a = "test"
-}
+def test_print = "x"
 
 echo this.test_print.toString()
 
@@ -17,7 +15,7 @@ def call(ctx) {
    ctx.checkout ctx.scm
    ctx.echo ctx.pwd()
    
-   ctx.println(ctx.test_print.a)
+   ctx.println(ctx.test_print)
    
 }
 

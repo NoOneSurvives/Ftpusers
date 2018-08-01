@@ -13,6 +13,8 @@ timestamps {
 
 def call() { 
    checkout scm
+   echo pwd()
+   
    println(test_print.a)
    
 }
